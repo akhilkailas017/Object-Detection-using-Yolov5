@@ -64,7 +64,16 @@ F. Create Virtual Environment for python ( optional )
 - type "deactivate" for deactivating virtual environment
 - if pip not showing in virtual folder type "python -m ensurepip" then upgrade pip
 
-G. References
+G. Yolo Commands
+
+- python train.py --img 415 --batch 16 --epochs 30 --data dataset.yaml --weights yolov5s.pt --cache
+- python train.py --img 640 --batch 8 --epochs 100 --data mat.yaml --weights yolov5s.pt --cache
+- python detect.py --source data/images/ --weights runs/train/exp/weights/best.pt
+- python detect.py --source data/images/ --weights runs/train/exp/weights/best.pt --conf 0.50
+- python export.py --data mat.yaml --weights runs/train/exp/weights/best.pt --include tflite --img 640
+- python detect.py --weights runs/train/exp/weights/best-fp16.tflite --img 640 --source data/images/
+
+H. References
 - python : https://www.python.org/downloads/
 - labelImg : https://github.com/tzutalin/labelImg
 - xml to yolo converter : https://github.com/bjornstenger/xml2yolo
