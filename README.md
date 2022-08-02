@@ -3,7 +3,7 @@
 Yolov5 Custom Dataset Training
 
 
-A. Dataset Creation
+**Dataset Creation**
 
 - collect images for custom dataset training.(size and resolution of the image dosent matter)
 - install python using https://www.python.org/downloads/
@@ -16,7 +16,7 @@ A. Dataset Creation
 - save convert.py file
 - then open command prompt in that convert folder and type "python convert.py" this will create yolo text file(.txt) for the xml file
 
-B. Seperating Dataset for train and validation
+**Seperating Dataset for train and validation**
 
 - for training we need 80% of images we collected and for validation the remaining 20% image needed ( train=80% and validation=20% ).
 - copy 80% of images from dataset to train folder in location dataset\images\train
@@ -24,14 +24,14 @@ B. Seperating Dataset for train and validation
 - copy remaining images from dataset to validation folder in location dataset\images\val
 - copy corresponding yolo file of the image used for validation to location dataset\labels\val
 
-C. Yaml file editing
+**Yaml file editing**
 
 - open the folder data in yolov5\data and open custom_dataset.yaml in notpad.
 - change the value of nc to the no of classes present in our dataset
 - replace the classnames with our class names
 - save the file
 
-D. Yolov5 training and detecting
+**Yolov5 training and detecting**
 
 - open command prompt in folder yolov5 then type "pip install -r requirements.txt" for installing requirement for yolov5
 - for training open command prompt in folder yolov5 then type "python train.py --img 640 --batch 16 --epochs 100 --data custom_dataset.yaml --weights yolov5s.pt --cache"
@@ -40,7 +40,7 @@ D. Yolov5 training and detecting
 - open command prompt in folder yolov5 then type "python detect.py --source data/images/ --weights runs/train/exp/weights/best.pt"
 - after completing detection it gives results in folder yolov5/runs/detect
 
-E. Keywords used in Yolov5
+**Keywords used in Yolov5**
 
 - batch — batch size (-1 for auto batch size). Use the largest batch size that your hardware allows for.
 - epochs — number of epochs.
@@ -54,7 +54,7 @@ E. Keywords used in Yolov5
 - iou — IoU threshold for NMS (Non Max Supression)
 - augment — augmented inference (TTA)
 
-F. Create Virtual Environment for python ( optional )
+**Create Virtual Environment for python ( optional )**
 
 - download and install python
 - create a folder in our local disk
@@ -64,7 +64,7 @@ F. Create Virtual Environment for python ( optional )
 - type "deactivate" for deactivating virtual environment
 - if pip not showing in virtual folder type "python -m ensurepip" then upgrade pip
 
-G. Yolo Commands
+**Yolo Commands**
 
 - python train.py --img 415 --batch 16 --epochs 30 --data dataset.yaml --weights yolov5s.pt --cache
 - python train.py --img 640 --batch 8 --epochs 100 --data mat.yaml --weights yolov5s.pt --cache
@@ -73,7 +73,8 @@ G. Yolo Commands
 - python export.py --data mat.yaml --weights runs/train/exp/weights/best.pt --include tflite --img 640
 - python detect.py --weights runs/train/exp/weights/best-fp16.tflite --img 640 --source data/images/
 
-H. References
+**References**
+
 - python : https://www.python.org/downloads/
 - labelImg : https://github.com/tzutalin/labelImg
 - xml to yolo converter : https://github.com/bjornstenger/xml2yolo
